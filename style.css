@@ -1,0 +1,782 @@
+:root {
+  --bg: #050b14;
+  --panel: #0d1724;
+  --panel-strong: #102337;
+  --text: #fff8fb;
+  --muted: #cfc6d6;
+  --cyan: #67dcff;
+  --pink: #58a6ff;
+  --gold: #ffd166;
+  --coral: #7ee9ff;
+  --violet: #2f7cff;
+  --line: rgba(255, 255, 255, .18);
+  --shadow: 0 24px 70px rgba(0, 0, 0, .42);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--text);
+  font-family: "Poppins", Arial, sans-serif;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(103, 220, 255, .28), transparent 28rem),
+    radial-gradient(circle at 84% 10%, rgba(47, 124, 255, .22), transparent 25rem),
+    radial-gradient(circle at 60% 96%, rgba(255, 209, 102, .12), transparent 23rem),
+    linear-gradient(145deg, #03101d 0%, #071a2b 45%, #050912 100%);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, .8) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(103, 220, 255, .75) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 209, 102, .65) 0 1px, transparent 1.5px);
+  background-position: 0 0, 28px 44px, 66px 18px;
+  background-size: 110px 110px, 140px 140px, 180px 180px;
+  opacity: .28;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+span,
+strong,
+a,
+button {
+  overflow-wrap: break-word;
+}
+
+.site-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 44px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  transform: translateY(-130%);
+  color: #051016;
+  background: var(--cyan);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 800;
+  transition: transform .2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.brand-header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 420px;
+  padding: 28px clamp(18px, 4vw, 52px) 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(3, 12, 22, .48), rgba(3, 12, 22, .92)),
+    url("assets/alicia-gems-pic-1.jpeg") center 48% / cover;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.brand-header::after {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: -1;
+  height: 160px;
+  content: "";
+  background: linear-gradient(transparent, rgba(8, 7, 13, .96));
+}
+
+.spark-field span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 14px currentColor;
+  animation: floatSpark 4.5s ease-in-out infinite;
+}
+
+.spark-field span:nth-child(1) {
+  left: 12%;
+  top: 28%;
+  color: var(--cyan);
+}
+
+.spark-field span:nth-child(2) {
+  left: 78%;
+  top: 18%;
+  color: var(--gold);
+  animation-delay: -.9s;
+}
+
+.spark-field span:nth-child(3) {
+  left: 86%;
+  top: 58%;
+  color: var(--pink);
+  animation-delay: -1.5s;
+}
+
+.spark-field span:nth-child(4) {
+  left: 23%;
+  top: 70%;
+  color: var(--violet);
+  animation-delay: -2.1s;
+}
+
+.spark-field span:nth-child(5) {
+  left: 58%;
+  top: 14%;
+  color: white;
+  animation-delay: -2.7s;
+}
+
+.spark-field span:nth-child(6) {
+  left: 42%;
+  top: 82%;
+  color: var(--coral);
+  animation-delay: -3.3s;
+}
+
+.smile-logo {
+  width: min(520px, 92vw);
+  margin: 0 auto -8px;
+  filter: drop-shadow(0 18px 38px rgba(0, 0, 0, .45));
+}
+
+.smile-logo svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.lip-top {
+  transform-origin: 50% 52%;
+  animation: smilePulse 3.2s ease-in-out infinite;
+}
+
+.lip-bottom {
+  transform-origin: 50% 52%;
+  animation: smilePulse 3.2s ease-in-out infinite reverse;
+}
+
+.gem-one,
+.gem-two,
+.twinkles {
+  transform-origin: center;
+  animation: gemFlash 1.5s ease-in-out infinite;
+}
+
+.gem-two {
+  animation-delay: .35s;
+}
+
+.twinkles {
+  animation-delay: .72s;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 8px;
+  color: var(--cyan);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--gold);
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(3.8rem, 9vw, 7.2rem);
+  font-weight: 400;
+  line-height: .86;
+  text-shadow: 0 0 26px rgba(255, 209, 102, .38);
+}
+
+.tagline {
+  margin: 16px auto 24px;
+  max-width: 560px;
+  color: var(--muted);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.tab-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: min(520px, 100%);
+  margin: 0 auto;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(12px);
+}
+
+.tab-button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+
+.tab-button:hover,
+.tab-button:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, .1);
+  outline: none;
+}
+
+.tab-button.active {
+  color: #07090f;
+  background: linear-gradient(135deg, var(--cyan), var(--gold));
+}
+
+main {
+  margin-top: 18px;
+}
+
+.tab-panel {
+  display: none;
+  animation: pageIn .34s ease both;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.hero-grid,
+.booking-grid,
+.price-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, .78fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.hero-copy,
+.contact-panel,
+.section-heading {
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(18, 18, 29, .84);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy h2,
+.section-heading h2,
+.booking-grid h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2.1rem, 5vw, 4.5rem);
+  line-height: .95;
+}
+
+.hero-copy p,
+.booking-grid p,
+.price-item p,
+.contact-panel p,
+address {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.action-row,
+.booking-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, .28);
+  outline: none;
+}
+
+.button.primary {
+  color: #061018;
+  background: linear-gradient(135deg, var(--cyan), var(--pink));
+}
+
+.button.secondary {
+  color: #111015;
+  background: linear-gradient(135deg, var(--gold), var(--coral));
+}
+
+.button.ghost,
+.button.map-button {
+  color: var(--text);
+  border-color: var(--line);
+  background: rgba(255, 255, 255, .08);
+}
+
+.feature-photo,
+.menu-photo,
+.gallery button {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--panel);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.feature-photo,
+.menu-photo {
+  display: grid;
+  place-items: center;
+}
+
+.feature-photo img,
+.menu-photo img {
+  width: 100%;
+  height: 100%;
+  max-height: 640px;
+  object-fit: contain;
+  background: radial-gradient(circle at center, rgba(103, 220, 255, .18), rgba(4, 11, 20, .96));
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.feature-photo:hover img,
+.menu-photo:hover img,
+.gallery button:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.18) contrast(1.05);
+}
+
+.feature-photo span,
+.menu-photo span {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #071016;
+  background: rgba(255, 255, 255, .86);
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.service-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.service-strip span {
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: #081014;
+  background: linear-gradient(135deg, rgba(103, 220, 255, .95), rgba(255, 209, 102, .9));
+  font-weight: 900;
+  text-align: center;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gallery button {
+  aspect-ratio: 4 / 5;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: linear-gradient(145deg, rgba(7, 19, 32, .98), rgba(15, 35, 55, .94));
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.section-heading {
+  margin-bottom: 18px;
+}
+
+.price-layout {
+  align-items: start;
+}
+
+.price-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.price-item {
+  min-height: 158px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(150deg, rgba(28, 23, 39, .95), rgba(13, 17, 27, .95));
+  box-shadow: 0 16px 42px rgba(0, 0, 0, .22);
+}
+
+.price-item span {
+  display: block;
+  color: var(--pink);
+  font-weight: 900;
+}
+
+.price-item strong {
+  display: block;
+  margin: 8px 0;
+  color: var(--cyan);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.05;
+}
+
+.policy-note {
+  margin: 18px 0 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 209, 102, .45);
+  border-radius: 8px;
+  color: #14100a;
+  background: linear-gradient(135deg, var(--gold), #fff1a6);
+  font-weight: 900;
+  text-align: center;
+}
+
+.booking-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  padding: clamp(22px, 5vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(3, 12, 22, .96), rgba(3, 20, 34, .82)),
+    url("assets/alicia-gems-pic-1.jpeg") center / cover;
+  box-shadow: var(--shadow);
+}
+
+.booking-grid > div {
+  min-width: 0;
+}
+
+.contact-panel {
+  overflow: hidden;
+  background: rgba(5, 17, 30, .86);
+}
+
+.contact-panel img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center 32%;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .32);
+}
+
+.contact-panel h3 {
+  margin: 0 0 12px;
+  color: var(--cyan);
+  font-size: 1.6rem;
+}
+
+.contact-panel div {
+  margin-top: 18px;
+}
+
+address {
+  font-style: normal;
+}
+
+.lightbox {
+  width: min(980px, calc(100% - 28px));
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #07070c;
+  box-shadow: var(--shadow);
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, .78);
+  backdrop-filter: blur(5px);
+}
+
+.lightbox img {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 6px;
+  color: #08070d;
+  background: white;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+@keyframes smilePulse {
+  50% {
+    transform: scaleX(1.025) translateY(-2px);
+  }
+}
+
+@keyframes gemFlash {
+  50% {
+    transform: scale(1.24) rotate(5deg);
+    opacity: .72;
+  }
+}
+
+@keyframes floatSpark {
+  50% {
+    transform: translate3d(12px, -16px, 0) scale(1.45);
+    opacity: .55;
+  }
+}
+
+@keyframes pageIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero-grid,
+  .booking-grid,
+  .price-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-photo,
+  .menu-photo {
+    min-height: auto;
+    aspect-ratio: auto;
+  }
+
+  .feature-photo img,
+  .menu-photo img {
+    height: auto;
+    max-height: none;
+  }
+
+  .service-strip,
+  .price-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .site-shell {
+    width: min(100% - 16px, 1180px);
+    padding: 8px 0 28px;
+  }
+
+  .brand-header {
+    min-height: auto;
+    padding: 18px 12px 16px;
+    background-position: center top;
+  }
+
+  .smile-logo {
+    width: min(340px, 94vw);
+    margin-bottom: -2px;
+  }
+
+  h1 {
+    font-size: clamp(3.25rem, 17vw, 4.25rem);
+    line-height: .9;
+  }
+
+  .tagline {
+    margin: 12px auto 16px;
+    font-size: .98rem;
+  }
+
+  .tab-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .tab-button {
+    min-height: 42px;
+    padding: 8px 6px;
+    font-size: .9rem;
+  }
+
+  main {
+    margin-top: 12px;
+  }
+
+  .hero-copy,
+  .contact-panel,
+  .section-heading,
+  .booking-grid {
+    padding: 18px;
+  }
+
+  .hero-copy h2,
+  .section-heading h2,
+  .booking-grid h2 {
+    font-size: clamp(2rem, 11vw, 3.1rem);
+    line-height: 1;
+  }
+
+  .hero-copy p,
+  .booking-grid p,
+  .price-item p,
+  .contact-panel p {
+    font-size: .96rem;
+    line-height: 1.6;
+  }
+
+  .service-strip,
+  .price-list,
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .service-strip {
+    gap: 8px;
+  }
+
+  .service-strip span {
+    min-height: 48px;
+  }
+
+  .gallery button {
+    aspect-ratio: auto;
+  }
+
+  .gallery img {
+    height: auto;
+    max-height: none;
+  }
+
+  .price-item {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .price-item strong {
+    font-size: clamp(1.35rem, 8vw, 1.8rem);
+  }
+
+  .policy-note {
+    padding: 16px;
+  }
+
+  .contact-panel img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .action-row,
+  .booking-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .feature-photo:hover img,
+  .menu-photo:hover img,
+  .gallery button:hover img {
+    transform: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .tab-button {
+    font-size: .82rem;
+  }
+
+  h1 {
+    font-size: 3.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
