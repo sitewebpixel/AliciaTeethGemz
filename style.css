@@ -541,21 +541,33 @@ address {
 
 .contact-panel img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 3 / 4;
   border-radius: 6px;
-  object-fit: cover;
-  object-position: center 32%;
+  object-fit: contain;
+  background: #05070c;
   box-shadow: 0 16px 38px rgba(0, 0, 0, .32);
 }
 
 .contact-panel h3 {
   margin: 0 0 12px;
   color: var(--cyan);
-  font-size: 1.6rem;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 400;
+  line-height: .95;
 }
 
 .contact-panel div {
   margin-top: 18px;
+}
+
+.location-script {
+  margin: 0;
+  color: #f7fbff;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  text-shadow: 0 0 18px rgba(103, 220, 255, .46);
 }
 
 address {
@@ -756,7 +768,7 @@ address {
   }
 
   .contact-panel img {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 4;
   }
 
   .action-row,
