@@ -541,7 +541,8 @@ address {
 
 .contact-panel img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: auto;
+  max-height: none;
   border-radius: 6px;
   object-fit: contain;
   background: #05070c;
@@ -765,10 +766,6 @@ address {
 
   .policy-note {
     padding: 16px;
-  }
-
-  .contact-panel img {
-    aspect-ratio: 3 / 4;
   }
 
   .action-row,
