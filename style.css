@@ -299,6 +299,10 @@ main {
   align-items: stretch;
 }
 
+.hero-grid-single {
+  grid-template-columns: 1fr;
+}
+
 .hero-copy,
 .contact-panel,
 .section-heading {
