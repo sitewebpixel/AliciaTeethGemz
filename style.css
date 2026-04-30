@@ -98,15 +98,13 @@ button {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 420px;
   display: grid;
-  align-content: end;
-  padding: 120px clamp(18px, 4vw, 52px) 32px;
+  gap: 18px;
+  justify-items: center;
+  padding: clamp(12px, 2vw, 18px);
   border: 1px solid var(--line);
   border-radius: 8px;
-  background:
-    linear-gradient(rgba(3, 8, 18, .28), rgba(3, 9, 18, .84)),
-    url("assets/background-alicia.jpeg") center 43% / cover;
+  background: linear-gradient(145deg, rgba(3, 8, 18, .96), rgba(5, 16, 30, .92));
   box-shadow: var(--shadow);
   text-align: center;
 }
@@ -118,6 +116,15 @@ button {
   height: 160px;
   content: "";
   background: linear-gradient(transparent, rgba(8, 7, 13, .96));
+}
+
+.brand-image {
+  width: min(100%, 640px);
+  aspect-ratio: 1;
+  border-radius: 6px;
+  object-fit: contain;
+  background: #000;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, .35);
 }
 
 .spark-field span {
@@ -657,9 +664,7 @@ address {
   }
 
   .brand-header {
-    min-height: auto;
-    padding: 92px 12px 16px;
-    background-position: center top;
+    padding: 8px;
   }
 
   .smile-logo {
